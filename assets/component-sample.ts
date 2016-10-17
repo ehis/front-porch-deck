@@ -1,11 +1,4 @@
-import {
-    Component,
-    OnInit,
-    Destroy,
-    Input,
-    Output,
-    EventEmitter
-} from '@angular/core';
+import { Component, OnInit, Destroy, Input, Output, EventEmitter } from '@angular/core';
 import { ProfileService } from './profile.service';
 
 @Component({
@@ -38,6 +31,4 @@ export class ProfileComponent implements OnInit {
     onButtonClicked() {
         this.sayFullName.emit(this.fullName);
     }
-
-
 }

@@ -201,14 +201,12 @@ export default class Presentation extends React.Component {
             </List>
           </Slide>
 
-          <Slide transition={["slide"]} bgColor="primary">
-            <Layout>
-              <CodePane
-                lang="js"
-                source={require("raw!../assets/component-sample.ts")}
-                margin="20px auto"
-              />
-            </Layout>
+          <Slide transition={["slide"]} bgColor="primary" margin="0 0">
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/component-sample.ts")}
+              style={{ fonSize: "0.2em" }}
+            />
           </Slide>
 
           <Slide transition={["slide"]} bgColor="primary">
