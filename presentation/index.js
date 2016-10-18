@@ -65,6 +65,8 @@ const theme = createTheme({
   tertiary: "Roboto"
 });
 
+const github = "http://github.com/ehis";
+
 export default class Presentation extends React.Component {
   render() {
     return (
@@ -338,6 +340,17 @@ export default class Presentation extends React.Component {
               lang="html"
               source={require("raw!../assets/form-sample.html")}
             />
+          </Slide>
+
+          <Slide>
+            <Link>
+              <Heading textColor={whiteGrey} size={5}>{github}</Heading>
+            </Link>
+            <br/>
+            <br/>
+            <Link>
+              <Heading textColor={whiteGrey} size={5}>Twitter - @ehiszy</Heading>
+            </Link>
           </Slide>
 
           <Slide transition={["spin", "slide"]} bgColor="primary">
