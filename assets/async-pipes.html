@@ -1,0 +1,7 @@
+<ul class="people">
+    <li *ngFor="let person of people | async " >
+        <a href="#" [routerLink]="['/persons', person.id]">
+          {{person.name}}
+        </a>
+    </li>
+  </ul>

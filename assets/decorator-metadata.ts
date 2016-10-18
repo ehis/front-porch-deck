@@ -1,0 +1,3 @@
+@SomeDecorator({
+    metadata: 'value'
+})

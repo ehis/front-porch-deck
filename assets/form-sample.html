@@ -3,20 +3,10 @@
 	<div class="registration__control">
 		<label for="email">Email</label>
 		<input type="text" name="email" [(ngModel)]="model.Email" #email="ngModel">
-		<small class="error" [hidden]="email.valid || (email.pristine && !submitted)">Enter a valid email address</small>
+		<small 
+			class="error" 
+			[hidden]="email.valid || (email.pristine && !submitted)">
+			Enter a valid email address</small>
 	</div>
-
-	<div class="registration__control">
-		<label for="password">Create Password</label>
-		<input type="password" name="password" [(ngModel)]="model.Password" #password="ngModel">
-		<small class="error" [hidden]="password.valid || (password.pristine && !submitted)">Must have at least 6 characters</small>
-	</div>
-
-	<div class="registration__control">
-		<label for="confirmPassword">Retype Password</label>
-		<input type="password" name="confirmPassword" [(ngModel)]="model.ConfirmPassword" #confirmPassword="ngModel">
-		<small class="error" [hidden]="password.pristine || confirmPassword.valid">Passwords must match</small>
-	</div>
-
 	<button class="red registration__submit" [disabled]="!registrationForm.form.valid">Submit</button>
 </form>

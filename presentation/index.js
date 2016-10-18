@@ -74,15 +74,25 @@ export default class Presentation extends React.Component {
             <Heading size={1} fit caps lineHeight={1} textColor={whiteGrey} margin="0 0 1.2em 0">
               Hi, I am Ehis
             </Heading>
-            <Heading size={5} textColor={dialexaGold}>
-              Full Stack Developer
-            </Heading>
-            <Heading size={2} textColor={dialexaGold}>
-              @
+            <Heading size={5} textColor={dialexaGold} style={{ margin: "1em 0"}}>
+              Software Developer
             </Heading>
             <Link href="https://dialexa.com">
               <Image src={images.dialexa.replace("/", "")} margin="0.8em auto" height="50px" />
             </Link>
+          </Slide>
+
+          <Slide transition={["slide"]}>
+            <Layout>
+              <Heading size={5} fill textColor={whiteGrey}>Dialexa is a Technology Research, Design & Creation Firm</Heading>
+            </Layout>
+            <Layout>
+              <List textColor={whiteGrey}>
+                <ListItem fit style={{ fontSize: "1em"}}>Technology is disrupting industries</ListItem>
+                <ListItem fit style={{ fontSize: "1em"}}>We turn concepts into products </ListItem>
+                <ListItem fit style={{ fontSize: "1em"}}>And products into companies</ListItem>
+              </List>
+            </Layout>
           </Slide>
 
 
@@ -124,12 +134,35 @@ export default class Presentation extends React.Component {
             </Layout>
           </Slide>
 
+          <Slide transition={["slide"]} bgColor="primary">
+            <Layout>
+              <Fill>
+                <Heading fill caps textColor={brightBlue} size={4} margin="0.3em 0">Angular 2 & Typescript</Heading>
+                <Heading size={4} caps textColor={whiteGrey} margin="1em 0">
+                  Decorators & metadata
+                </Heading>
+              </Fill>
+            </Layout>
+          </Slide>
+
+          <Slide>
+            <Layout>
+              <Fill>
+                <CodePane
+                  lang="js"
+                  source={require("raw!../assets/decorator-metadata.ts")}
+                  margin="20px auto"
+                  style={{ fontSize: "0.8em" }}
+                />
+              </Fill>
+            </Layout>
+          </Slide>
+
           <Slide transition={["slide", "fade"]} bgColor="primary" notes="Talk about Typescript">
             <CodePane
               lang="js"
               source={require("raw!../assets/typescript-sample.ts")}
               margin="20px auto"
-              style={{ fontSize: "0.8em" }}
             />
           </Slide>
 
@@ -138,7 +171,6 @@ export default class Presentation extends React.Component {
               lang="js"
               source={require("raw!../assets/typescript-sample.js")}
               margin="20px auto"
-              style={{ fontSize: "0.8em" }}
             />
           </Slide>
 
@@ -168,24 +200,47 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide transition={["slide"]} bgImage={images.universe.replace("/", "")} bgDarken={0.45}>
-            <Heading size={5} fit textColor={whiteGrey}>
-              Dependency Injection - @Injectable()
-            </Heading>
-            <Heading size={5} fit textColor={whiteGrey}>
-              Observables - subscribe()
-            </Heading>
-            <Heading size={5} fit textColor={whiteGrey}>
-              Modules - @NgModule()
-            </Heading>
-            <Heading size={5} fit textColor={whiteGrey}>
-              Components - @Component()
-            </Heading>
-            <Heading size={7} fit textColor={whiteGrey}>
-              Data - @Input()
-            </Heading>
-            <Heading size={7} fit textColor={whiteGrey}>
-              Events - @Output()
-            </Heading>
+            <List ordered size={5} textColor={whiteGrey}>
+              <ListItem>
+                Components - @Component()
+              </ListItem>
+              <ListItem>
+                Dependency Injection - @Injectable()
+              </ListItem>
+              <ListItem>
+                Observables - subscribe()
+              </ListItem>
+              <ListItem>
+                Modules - @NgModule()
+              </ListItem>
+              <ListItem>
+                Data - @Input()
+              </ListItem>
+              <ListItem>
+                Events - @Output()
+              </ListItem>
+              <ListItem>
+                Directives - @Directive()
+              </ListItem>
+            </List>
+          </Slide>
+
+          <Slide transition={["slide"]}>
+            <BlockQuote>
+              <Quote textColor={brightBlue} style={{ fontStyle: "italic" }}>"In Angular 2 depedency injection is commonly used to pass services into components"</Quote>
+            </BlockQuote>
+          </Slide>
+
+          <Slide transition={["slide"]}>
+            <BlockQuote>
+              <Quote textColor={brightBlue} style={{ fontStyle: "italic" }}>"Supports hierarchical dependency injection that works in parallel with the component tree"</Quote>
+            </BlockQuote>
+          </Slide>
+          
+          <Slide transition={["slide"]}>
+            <BlockQuote>
+              <Quote textColor={brightBlue} style={{ fontStyle: "italic" }}>"Simply put an observable emits a sequence of items in reactive programming"</Quote>
+            </BlockQuote>
           </Slide>
 
           <Slide transition={["slide"]} bgColor="primary">
@@ -215,6 +270,39 @@ export default class Presentation extends React.Component {
               source={require("raw!../assets/template-sample.html")}
               margin="20px auto"
               style={{ fontSize: "0.8em" }}
+            />
+          </Slide>
+
+          <Slide transition={["slilde"]}>
+            <Heading>@Directive()</Heading>
+          </Slide>
+
+          <Slide transition={["slile"]}>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/directive-sample.ts")}
+              margin="20px auto"
+            />
+          </Slide>
+
+          <Slide transition={["slile"]}>
+            <CodePane
+              lang="html"
+              source={require("raw!../assets/directive-sample.html")}
+              margin="20px auto"
+              style={{ fontSize: "0.8em" }}
+            />
+          </Slide>
+
+          <Slide>
+            <Heading>@NgModule()</Heading>
+          </Slide>
+
+          <Slide>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/module-sample.ts")}
+              margin="20px auto"
             />
           </Slide>
 
@@ -253,8 +341,8 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide transition={["spin", "slide"]} bgColor="primary">
-            <Heading size={1} caps fit lineHeight={1.5} textColor={blueGreen}>
-              demo!
+            <Heading size={3} caps fit lineHeight={1.5} textColor={blueGreen}>
+              DEMO
             </Heading>
           </Slide>
         </Deck>
