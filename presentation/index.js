@@ -3,7 +3,6 @@ import React from "react";
 
 // Import Spectacle Core tags
 import {
-  Appear,
   BlockQuote,
   Cite,
   CodePane,
@@ -15,7 +14,6 @@ import {
   Link,
   ListItem,
   List,
-  Markdown,
   Quote,
   Slide,
   Spectacle,
@@ -65,7 +63,8 @@ const theme = createTheme({
   tertiary: "Roboto"
 });
 
-const github = "http://github.com/ehis";
+const angular2 = "http://angular.io";
+const angularCli = "http://cli.angular.io";
 
 export default class Presentation extends React.Component {
   render() {
@@ -164,7 +163,8 @@ export default class Presentation extends React.Component {
             <CodePane
               lang="js"
               source={require("raw!../assets/typescript-sample.ts")}
-              margin="20px auto"
+              margin="auto auto"
+              style={{ fontSize: "0.6em" }}
             />
           </Slide>
 
@@ -172,7 +172,8 @@ export default class Presentation extends React.Component {
             <CodePane
               lang="js"
               source={require("raw!../assets/typescript-sample.js")}
-              margin="20px auto"
+              margin="auto auto"
+              style={{ fontSize: "0.6em" }}
             />
           </Slide>
 
@@ -238,7 +239,7 @@ export default class Presentation extends React.Component {
               <Quote textColor={brightBlue} style={{ fontStyle: "italic" }}>"Supports hierarchical dependency injection that works in parallel with the component tree"</Quote>
             </BlockQuote>
           </Slide>
-          
+
           <Slide transition={["slide"]}>
             <BlockQuote>
               <Quote textColor={brightBlue} style={{ fontStyle: "italic" }}>"Simply put an observable emits a sequence of items in reactive programming"</Quote>
@@ -284,6 +285,7 @@ export default class Presentation extends React.Component {
               lang="js"
               source={require("raw!../assets/directive-sample.ts")}
               margin="20px auto"
+              style={{ fontSize: "0.6em" }}
             />
           </Slide>
 
@@ -339,12 +341,18 @@ export default class Presentation extends React.Component {
             <CodePane
               lang="html"
               source={require("raw!../assets/form-sample.html")}
+              style={{ fontSize: "0.45em" }}
             />
           </Slide>
 
           <Slide>
             <Link>
-              <Heading textColor={whiteGrey} size={5}>{github}</Heading>
+              <Heading textColor={whiteGrey} size={5}>{angular2}</Heading>
+            </Link>
+            <br/>
+            <br/>
+            <Link>
+              <Heading textColor={whiteGrey} size={5}>{angularCli}</Heading>
             </Link>
             <br/>
             <br/>

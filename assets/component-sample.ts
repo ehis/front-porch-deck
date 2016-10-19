@@ -2,33 +2,33 @@ import { Component, OnInit, Destroy, Input, Output, EventEmitter } from '@angula
 import { ProfileService } from './profile.service';
 
 @Component({
-    selector: 'profile',
-    template: require('./profile.html'),
-    styles: [
-        require('./profile.scss')
-    ],
-    providers: [
-        ProfileService
-    ],
-    directives: []
+  selector: 'profile',
+  template: require('./profile.html'),
+  styles: [
+    require('./profile.scss')
+  ],
+  providers: [
+    ProfileService
+  ],
+  directives: []
 })
 export class ProfileComponent implements OnInit {
-    @Input() profileId: string;
-    @Output() sayFullName: EventEmitter<string> = new EventEmitter<string>();
+  @Input() profileId: string;
+  @Output() sayFullName: EventEmitter<string> = new EventEmitter<string>();
 
-    public profile: { firstname: string, lastname: string };
+  public profile: { firstname: string, lastname: string };
 
-    get fullName(): string {
-        return `${this.profile.firstname} ${this.profile.lastname}`;
-    }
+  get fullName(): string {
+    return `${this.profile.firstname} ${this.profile.lastname}`;
+  }
 
-    constructor(private profileService: ProfileService) { }
+  constructor(private profileService: ProfileService) { }
 
-    ngOnInit() {
-        this.profileService.fetch();
-    }
+  ngOnInit() {
+    this.profileService.fetch();
+  }
 
-    onButtonClicked() {
-        this.sayFullName.emit(this.fullName);
-    }
+  onButtonClicked() {
+    this.sayFullName.emit(this.fullName);
+  }
 }
