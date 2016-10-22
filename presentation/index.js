@@ -3,8 +3,6 @@ import React from "react";
 
 // Import Spectacle Core tags
 import {
-  BlockQuote,
-  Cite,
   CodePane,
   Deck,
   Fill,
@@ -14,11 +12,9 @@ import {
   Link,
   ListItem,
   List,
-  Quote,
   Slide,
   Spectacle,
-  Text,
-  Fit
+  Text
 } from "spectacle";
 
 // Import image preloader util
@@ -26,9 +22,6 @@ import preloader from "spectacle/lib/utils/preloader";
 
 // Import theme
 import createTheme from "spectacle/lib/themes/default";
-
-// Import custom component
-import Interactive from "../assets/interactive";
 
 // Require CSS
 require("normalize.css");
@@ -47,7 +40,10 @@ const images = {
   angular: require("../assets/angular.png"),
   rx: require("../assets/rx.png"),
   typescript: require("../assets/typescript.png"),
-  yaas: require("../assets/Yaas.gif")
+  yaas: require("../assets/Yaas.gif"),
+  yeah: require("../assets/write-in-angular2.jpg"),
+  happy: require("../assets/happy.gif"),
+  mah: require("../assets/mah.gif")
 };
 
 preloader(images);
@@ -56,12 +52,11 @@ const theme = createTheme({
   primary: darkBlue,
   secondary: blue,
   tertiary: brightBlue,
-  quartenary: whiteGrey
-}, {
-  primary: "Roboto Slab",
-  secondary: "Roboto",
-  tertiary: "Roboto"
-});
+  quartenary: whiteGrey }, {
+    primary: "Roboto Slab",
+    secondary: "Roboto",
+    tertiary: "Roboto"
+  });
 
 const angular2 = "http://angular.io";
 const angularCli = "http://cli.angular.io";
@@ -75,7 +70,7 @@ export default class Presentation extends React.Component {
             <Heading size={1} fit caps lineHeight={1} textColor={whiteGrey} margin="0 0 1.2em 0">
               Hi, I am Ehis
             </Heading>
-            <Heading size={5} textColor={dialexaGold} style={{ margin: "1em 0"}}>
+            <Heading size={5} textColor={dialexaGold} style={{ margin: "1em 0" }}>
               Software Developer
             </Heading>
             <Link href="https://dialexa.com">
@@ -84,18 +79,11 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide transition={["slide"]}>
-            <Layout>
-              <Heading size={5} fill textColor={whiteGrey}>Dialexa is a Technology Research, Design & Creation Firm</Heading>
-            </Layout>
-            <Layout>
-              <List textColor={whiteGrey}>
-                <ListItem fit style={{ fontSize: "1em"}}>Technology is disrupting industries</ListItem>
-                <ListItem fit style={{ fontSize: "1em"}}>We turn concepts into products </ListItem>
-                <ListItem fit style={{ fontSize: "1em"}}>And products into companies</ListItem>
-              </List>
-            </Layout>
+            <Link href="https://dialexa.com">
+              <Image src={images.dialexa.replace("/", "")} margin="0.8em auto" height="80px" />
+            </Link>
+            <Text fit textColor={whiteGrey}>The Technology Research, Design & Creation Firm</Text>
           </Slide>
-
 
           <Slide transition={["slide"]} bgColor="primary" notes="Getting started with Angular 2 and Typescript">
             <Heading size={2} caps fit textColor={whiteGrey} textFont="primary">
@@ -116,23 +104,70 @@ export default class Presentation extends React.Component {
             </Link>
           </Slide>
 
+          <Slide align="flex-start center">
+            <Heading>Features</Heading>
+            <List textColor={whiteGrey}>
+              <ListItem>Progressive Web Apps</ListItem>
+              <ListItem>Universal Applications</ListItem>
+              <ListItem>Code Splitting</ListItem>
+              <ListItem>Testing</ListItem>
+            </List>
+          </Slide>
+
           <Slide transition={["zoom"]} notes="Yaaaaas">
-            <Image src={images.yaas.replace("/", "")} height="500px" />
+            <Image src={images.happy.replace("/", "")} height="500px" />
+          </Slide>
+
+          <Slide transition={["zoom"]} notes="Yaaaaas">
+            <Image src={images.yeah.replace("/", "")} height="500px" />
           </Slide>
 
           <Slide transition={["slide"]} bgColor="primary">
             <Layout>
               <Fill>
-                <Heading size={4} caps textColor={whiteGrey} margin={10}>
+                <Heading size={4} caps textColor={whiteGrey}>
                   Typescript =
                 </Heading>
               </Fill>
               <Fill>
-                <Heading size={6} caps textColor={whiteGrey} margin={10}>
+                <Heading size={6} caps textColor={whiteGrey}>
                   es6 Javascript + types
                 </Heading>
               </Fill>
             </Layout>
+          </Slide>
+
+
+          <Slide transition={["slide", "fade"]} bgColor="primary" notes="Talk about Typescript">
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/typescript-sample.ts")}
+              style={{ fontSize: "0.6em" }}
+            />
+          </Slide>
+
+          <Slide transition={["slide", "fade"]} bgColor="primary" notes="Compiled Typescript Source in Javascript">
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/typescript-sample.js")}
+              style={{ fontSize: "0.6em" }}
+            />
+          </Slide>
+
+          <Slide notes="Result for executing javascript file">
+            <CodePane
+              lang="sh"
+              source={require("raw!../assets/sample-result.sh")}
+              style={{ height: "50%", fontSize: "1.2em" }}
+            />
+          </Slide>
+
+          <Slide notes="More typescript">
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/typescript-cool.ts")}
+              style={{ height: "50%", fontSize: "1em" }}
+            />
           </Slide>
 
           <Slide transition={["slide"]} bgColor="primary">
@@ -159,38 +194,8 @@ export default class Presentation extends React.Component {
             </Layout>
           </Slide>
 
-          <Slide transition={["slide", "fade"]} bgColor="primary" notes="Talk about Typescript">
-            <CodePane
-              lang="js"
-              source={require("raw!../assets/typescript-sample.ts")}
-              margin="auto auto"
-              style={{ fontSize: "0.6em" }}
-            />
-          </Slide>
-
-          <Slide transition={["slide", "fade"]} bgColor="primary" notes="Compiled Typescript Source in Javascript">
-            <CodePane
-              lang="js"
-              source={require("raw!../assets/typescript-sample.js")}
-              margin="auto auto"
-              style={{ fontSize: "0.6em" }}
-            />
-          </Slide>
-
-          <Slide notes="Result for executing javascript file">
-            <CodePane
-              lang="sh"
-              source={require("raw!../assets/sample-result.sh")}
-              style={{ height: "50%", fontSize: "1.2em"}}
-            />
-          </Slide>
-
-          <Slide notes="More typescript">
-            <CodePane
-              lang="js"
-              source={require("raw!../assets/typescript-cool.ts")}
-              style={{ height: "50%", fontSize: "1em"}}
-            />
+          <Slide>
+            <Heading size={3} textColor={whiteGrey}>First Steps?</Heading>
           </Slide>
 
           <Slide notes="The Easiest way to get started is to use the Angular Cli">
@@ -198,103 +203,7 @@ export default class Presentation extends React.Component {
             <CodePane
               lang="sh"
               source={require("raw!../assets/angular-cli.sh")}
-              style={{ height: "50%", fontSize: "1.2em"}}
-            />
-          </Slide>
-
-          <Slide transition={["slide"]} bgImage={images.universe.replace("/", "")} bgDarken={0.45}>
-            <List ordered size={5} textColor={whiteGrey}>
-              <ListItem>
-                Components - @Component()
-              </ListItem>
-              <ListItem>
-                Dependency Injection - @Injectable()
-              </ListItem>
-              <ListItem>
-                Observables - subscribe()
-              </ListItem>
-              <ListItem>
-                Modules - @NgModule()
-              </ListItem>
-              <ListItem>
-                Data - @Input()
-              </ListItem>
-              <ListItem>
-                Events - @Output()
-              </ListItem>
-              <ListItem>
-                Directives - @Directive()
-              </ListItem>
-            </List>
-          </Slide>
-
-          <Slide transition={["slide"]}>
-            <BlockQuote>
-              <Quote textColor={brightBlue} style={{ fontStyle: "italic" }}>"In Angular 2 depedency injection is commonly used to pass services into components"</Quote>
-            </BlockQuote>
-          </Slide>
-
-          <Slide transition={["slide"]}>
-            <BlockQuote>
-              <Quote textColor={brightBlue} style={{ fontStyle: "italic" }}>"Supports hierarchical dependency injection that works in parallel with the component tree"</Quote>
-            </BlockQuote>
-          </Slide>
-
-          <Slide transition={["slide"]}>
-            <BlockQuote>
-              <Quote textColor={brightBlue} style={{ fontStyle: "italic" }}>"Simply put an observable emits a sequence of items in reactive programming"</Quote>
-            </BlockQuote>
-          </Slide>
-
-          <Slide transition={["slide"]} bgColor="primary">
-            <Heading>
-              @Component({})
-            </Heading>
-            <List textColor={whiteGrey}>
-              <ListItem>HTML template</ListItem>
-              <ListItem>stylesheet</ListItem>
-              <ListItem>providers</ListItem>
-              <ListItem>directives</ListItem>
-              <ListItem>Lifecycle hooks</ListItem>
-            </List>
-          </Slide>
-
-          <Slide transition={["slide"]} bgColor="primary" margin="0 0">
-            <CodePane
-              lang="js"
-              source={require("raw!../assets/component-sample.ts")}
-              style={{ fonSize: "0.2em" }}
-            />
-          </Slide>
-
-          <Slide transition={["slide"]} bgColor="primary">
-            <CodePane
-              lang="html"
-              source={require("raw!../assets/template-sample.html")}
-              margin="20px auto"
-              style={{ fontSize: "0.8em" }}
-            />
-          </Slide>
-
-          <Slide transition={["slilde"]}>
-            <Heading>@Directive()</Heading>
-          </Slide>
-
-          <Slide transition={["slile"]}>
-            <CodePane
-              lang="js"
-              source={require("raw!../assets/directive-sample.ts")}
-              margin="20px auto"
-              style={{ fontSize: "0.6em" }}
-            />
-          </Slide>
-
-          <Slide transition={["slile"]}>
-            <CodePane
-              lang="html"
-              source={require("raw!../assets/directive-sample.html")}
-              margin="20px auto"
-              style={{ fontSize: "0.8em" }}
+              style={{ height: "50%", fontSize: "1.2em" }}
             />
           </Slide>
 
@@ -306,8 +215,42 @@ export default class Presentation extends React.Component {
             <CodePane
               lang="js"
               source={require("raw!../assets/module-sample.ts")}
-              margin="20px auto"
+              style={{ fontSize: "0.5em"}}
             />
+          </Slide>
+
+           <Slide transition={["slilde"]}>
+            <Heading>@Directive()</Heading>
+            <Text textColor={whiteGrey}>ngStyle, ngIf, ngFor</Text>
+          </Slide>
+
+          <Slide>
+            <CodePane
+              lang="html"
+              source={require("raw!../assets/ngIf-sample.html")}
+              style={{ fontSize: "1em" }}
+            />
+          </Slide>
+
+          <Slide transition={["slile"]}>
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/directive-sample.ts")}
+              style={{ fontSize: "0.6em" }}
+            />
+          </Slide>
+
+          <Slide transition={["slile"]}>
+            <CodePane
+              lang="html"
+              source={require("raw!../assets/directive-sample.html")}
+              style={{ fontSize: "0.6em" }}
+            />
+          </Slide>
+
+          <Slide>
+            <Heading>Services</Heading>
+            <Text fit textColor={whiteGrey}>Functionality that can be injected into a component</Text>
           </Slide>
 
           <Slide transition={["slide"]} bgColor="primary">
@@ -318,47 +261,65 @@ export default class Presentation extends React.Component {
             <CodePane
               lang="js"
               source={require("raw!../assets/http-sample.ts")}
-              margin="20px auto"
               style={{ fontSize: "0.8em" }}
             />
           </Slide>
 
+          <Slide transition={["slide"]} bgColor="primary">
+            <Heading>
+              @Component({})
+            </Heading>
+            <List textColor={whiteGrey}>
+              <ListItem>HTML Template</ListItem>
+              <ListItem>Stylesheet</ListItem>
+              <ListItem>Providers</ListItem>
+              <ListItem>Lifecycle hooks</ListItem>
+            </List>
+          </Slide>
 
+          <Slide transition={["slide"]} bgColor="primary">
+            <CodePane
+              lang="html"
+              source={require("raw!../assets/profile-sample.html")}
+              style={{ fontSize: "1em" }}
+            />
+          </Slide>
+
+          <Slide transition={["slide"]} bgColor="primary">
+            <CodePane
+              lang="js"
+              source={require("raw!../assets/component-sample.ts")}
+              style={{ fonSize: "0.2em" }}
+            />
+          </Slide>
+
+          <Slide transition={["slide"]} bgColor="primary">
+            <CodePane
+              lang="html"
+              source={require("raw!../assets/template-sample.html")}
+              style={{ fontSize: "0.8em" }}
+            />
+          </Slide>
+        
           <Slide transition={["slide"]} bgColor="primary">
             <Heading>@angular/forms </Heading>
           </Slide>
 
+          <Slide>
+            <Heading size={5} fill textColor={whiteGrey}>Template Driven vs Reactive Forms</Heading>
+          </Slide>
+
           <Slide transition={["slide"]} bgColor="primary" notes="Talk about the core concepts in angular 2 forms">
             <List textColor={whiteGrey}>
-                <ListItem>Two Data Binding - [(ngModel)]</ListItem>
-                <ListItem>Change Tracking</ListItem>
-                <ListItem>Validation</ListItem>
-                <ListItem>Error Handling</ListItem>
+              <ListItem>Two Way Data Binding - [(ngModel)]</ListItem>
+              <ListItem>Change Tracking</ListItem>
+              <ListItem>Validation</ListItem>
+              <ListItem>Error Handling</ListItem>
             </List>
           </Slide>
 
-          <Slide transition={["slide"]} bgColor="primary" notes="Talk about the core concepts in angular 2 forms">
-            <CodePane
-              lang="html"
-              source={require("raw!../assets/form-sample.html")}
-              style={{ fontSize: "0.45em" }}
-            />
-          </Slide>
-
-          <Slide>
-            <Link>
-              <Heading textColor={whiteGrey} size={5}>{angular2}</Heading>
-            </Link>
-            <br/>
-            <br/>
-            <Link>
-              <Heading textColor={whiteGrey} size={5}>{angularCli}</Heading>
-            </Link>
-            <br/>
-            <br/>
-            <Link>
-              <Heading textColor={whiteGrey} size={5}>Twitter - @ehiszy</Heading>
-            </Link>
+          <Slide transition={["zoom"]} notes="Yaaaaas">
+            <Image src={images.mah.replace("/", "")} height="500px" />
           </Slide>
 
           <Slide transition={["spin", "slide"]} bgColor="primary">
@@ -366,6 +327,23 @@ export default class Presentation extends React.Component {
               DEMO
             </Heading>
           </Slide>
+
+          <Slide>
+            <Link href="https://angular.io">
+              <Heading textColor={whiteGrey} size={5}>{angular2}</Heading>
+            </Link>
+            <br />
+            <br />
+            <Link href="https://cli.angular.io">
+              <Heading textColor={whiteGrey} size={5}>{angularCli}</Heading>
+            </Link>
+            <br />
+            <br />
+            <Link href="https://twitter.com/ehiszy">
+              <Heading textColor={whiteGrey} size={5}>Twitter - @ehiszy</Heading>
+            </Link>
+          </Slide>
+
         </Deck>
       </Spectacle>
     );

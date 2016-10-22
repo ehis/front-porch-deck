@@ -9,8 +9,7 @@ import { ProfileService } from './profile.service';
   ],
   providers: [
     ProfileService
-  ],
-  directives: []
+  ]
 })
 export class ProfileComponent implements OnInit {
   @Input() profileId: string;
@@ -25,10 +24,11 @@ export class ProfileComponent implements OnInit {
   constructor(private profileService: ProfileService) { }
 
   ngOnInit() {
-    this.profileService.fetch();
+    this.profileService.fetch()
+      .subscribe((result) => this.profile = result);
   }
 
-  onButtonClicked() {
+  onClick() {
     this.sayFullName.emit(this.fullName);
   }
 }

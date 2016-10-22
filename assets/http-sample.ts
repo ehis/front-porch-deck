@@ -1,14 +1,13 @@
 import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class EventService {
-    constructor(private http: Http) { }
+  constructor(private http: Http) { }
 
-    getCurrentEvents() {
-        return this.http.get('api/events/current')
-            .map(res => res.json())
-            .catch(err => Observable.throw(err))
-    }
+  getCurrentEvents(): Observable<any> {
+    return this.http.get('api/events/current')
+      .map(res => res.json())
+  }
 }

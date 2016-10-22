@@ -1,15 +1,15 @@
-export const components = [
-    AppComponent
-    ProfileComponent,
-    AvatarComponent
+const components = [
+  AppComponent,
+  ProfileComponent,
+  AvatarComponent
 ];
 
-export const directives = [
-    ChartDirective
+const directives = [
+  ChartDirective
 ];
 
-export const pipes = {
-    FromNowPipe
+const pipes = {
+  FromNowPipe
 };
 
 @NgModule({
@@ -24,7 +24,7 @@ export const pipes = {
     HttpModule,
     SharedModule
   ],
-  providers: [ AppService ],
+  providers: [AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
