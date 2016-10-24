@@ -195,7 +195,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
-            <Heading size={3} textColor={whiteGrey}>First Steps?</Heading>
+            <Heading size={3} textColor={whiteGrey}>Getting Started</Heading>
           </Slide>
 
           <Slide notes="The Easiest way to get started is to use the Angular Cli">
