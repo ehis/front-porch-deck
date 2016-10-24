@@ -300,7 +300,7 @@ export default class Presentation extends React.Component {
               style={{ fontSize: "0.8em" }}
             />
           </Slide>
-        
+
           <Slide transition={["slide"]} bgColor="primary">
             <Heading>@angular/forms </Heading>
           </Slide>
