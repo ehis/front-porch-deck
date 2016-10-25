@@ -1,17 +1,3 @@
-const components = [
-  AppComponent,
-  ProfileComponent,
-  AvatarComponent
-];
-
-const directives = [
-  ChartDirective
-];
-
-const pipes = {
-  FromNowPipe
-};
-
 @NgModule({
   declarations: [
     ...components,

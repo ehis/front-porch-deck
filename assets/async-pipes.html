@@ -1,7 +1,7 @@
-<ul class="people">
-    <li *ngFor="let person of people | async " >
-        <a href="#" [routerLink]="['/persons', person.id]">
-          {{person.name}}
+<ul class="Events">
+	<li *ngFor="let event of events | async">
+		<a href="#" [routerLink]="['/events', event.id]">
+          {{event.name}}
         </a>
-    </li>
-  </ul>
+	</li>
+</ul>

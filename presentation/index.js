@@ -60,6 +60,8 @@ const theme = createTheme({
 
 const angular2 = "http://angular.io";
 const angularCli = "http://cli.angular.io";
+const github = "http://github.com/ehis";
+const rxjs = "http://reactivex.io/rxjs";
 
 export default class Presentation extends React.Component {
   render() {
@@ -266,6 +268,14 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide transition={["slide"]} bgColor="primary">
+            <CodePane
+              lang="html"
+              source={require("raw!../assets/async-pipes.html")}
+              style={{ fontSize: "0.8em" }}
+            />
+          </Slide>
+
+          <Slide transition={["slide"]} bgColor="primary">
             <Heading>
               @Component({})
             </Heading>
@@ -336,6 +346,16 @@ export default class Presentation extends React.Component {
             <br />
             <Link href="https://cli.angular.io">
               <Heading textColor={whiteGrey} size={5}>{angularCli}</Heading>
+            </Link>
+            <br />
+            <br />
+            <Link href="https://github.com/ehis">
+              <Heading textColor={whiteGrey} size={5}>{github}</Heading>
+            </Link>
+            <br />
+            <br />
+            <Link href="https://reactivex.io/rxjs">
+              <Heading textColor={whiteGrey} size={5}>{rxjs}</Heading>
             </Link>
             <br />
             <br />
